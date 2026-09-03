@@ -22,7 +22,7 @@ class DashboardScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Header
-            _buildHeader(),
+            _buildHeader(appState),
             const SizedBox(height: 16),
             // Live Camera
             const LiveCameraCard(),
@@ -106,14 +106,20 @@ class DashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             // Emergency Alert Bar
-            const EmergencyAlertBar(),
+            EmergencyAlertBar(
+              onSosPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('SOS ALERT TRIGGERED')),
+                );
+              },
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(AppState appState) {
     return Column(
       children: [
         const Text(
@@ -134,7 +140,7 @@ class DashboardScreen extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Row(
-          mainAxisAlignment: MainAxisSpaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Menu icon (we'll use a placeholder for now)
             IconButton(

@@ -1,6 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:sentinel_x/models/alert_event.dart';
 
-class AlertService {
+class AlertService extends ChangeNotifier {
   // In a real app, this would be a list or a stream from a backend
   final List<AlertEvent> _alerts = [];
 
@@ -22,7 +23,7 @@ class AlertService {
       isDemo: isDemo,
     );
     _alerts.add(alert);
-    // In a real app, we would notify listeners here
+    notifyListeners();
   }
 
   // Get all alerts
@@ -31,5 +32,6 @@ class AlertService {
   // Clear alerts (for demo purposes)
   void clear() {
     _alerts.clear();
+    notifyListeners();
   }
 }

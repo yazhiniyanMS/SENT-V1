@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sentinel_x/app.dart';
-import 'package:sentinel_x/core/theme/app_theme.dart';
 import 'package:sentinel_x/models/alert_event.dart';
 import 'package:sentinel_x/services/alert_service.dart';
 

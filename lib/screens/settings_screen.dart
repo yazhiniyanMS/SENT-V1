@@ -26,7 +26,7 @@ class SettingsScreen extends StatelessWidget {
               'Demo Mode',
               appState.demoMode,
               (value) => appState.setDemoMode(value),
-              icon: Icons.demo,
+              icon: Icons.science_outlined,
             ),
             _buildSwitchTile(
               'Thermal Simulation',

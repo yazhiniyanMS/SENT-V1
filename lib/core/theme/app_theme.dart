@@ -10,9 +10,17 @@ class AppTheme {
   static const Color dangerColor = Color(0xFFFF0000); // Red for danger
   static const Color infoColor = Color(0xFF00BFFF); // DeepSkyBlue for information
   static const Color textPrimaryColor = Colors.white;
-  static const Color textSecondaryColor = Colors.grey[400]!;
-  static const Color borderColor = Colors.grey[800]!;
+  static const Color textSecondaryColor = Color(0xFFBDBDBD); // grey[400]
+  static const Color borderColor = Color(0xFF424242); // grey[800]
   static const Color glowColor = Color.fromARGB(100, 255, 69, 0); // Glow for accents
+
+  // Thermal simulation gradient colors
+  static const Color thermalCold = Color(0xFF00008B); // Dark Blue
+  static const Color thermalCool = Color(0xFF0000FF); // Blue
+  static const Color thermalMedium = Color(0xFF00FF00); // Green
+  static const Color thermalWarm = Color(0xFFFFFF00); // Yellow
+  static const Color thermalHot = Color(0xFFFFA500); // Orange
+  static const Color thermalHottest = Color(0xFFFFFFFF); // White
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
@@ -21,7 +29,6 @@ class AppTheme {
     colorScheme: ColorScheme.dark(
       primary: accentColor,
       secondary: infoColor,
-      background: backgroundColor,
       surface: cardColor,
       error: dangerColor,
     ),
@@ -30,7 +37,7 @@ class AppTheme {
       elevation: 0,
       foregroundColor: textPrimaryColor,
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: cardColor,
       elevation: 2,
       shape: RoundedRectangleBorder(
@@ -44,7 +51,7 @@ class AppTheme {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black87,
       selectedItemColor: accentColor,
-      unselectedItemColor: Colors.grey[400],
+      unselectedItemColor: textSecondaryColor,
       showSelectedLabels: true,
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
@@ -72,12 +79,12 @@ class AppTheme {
       ),
       headlineMedium: TextStyle(
         fontSize: 18,
-        fontWeight: FontWeight.semiBold,
+        fontWeight: FontWeight.w600,
         color: textPrimaryColor,
       ),
       headlineSmall: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.semiBold,
+        fontWeight: FontWeight.w600,
         color: textPrimaryColor,
       ),
       bodyLarge: TextStyle(

@@ -64,7 +64,7 @@ class RobotStatusCard extends StatelessWidget {
 
   Widget _buildStatusRow(String label, String value, Color color) {
     return Row(
-      mainAxisAlignment: MainAxisSpaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           label,

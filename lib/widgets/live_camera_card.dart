@@ -65,7 +65,7 @@ class _LiveCameraCardState extends State<LiveCameraCard> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisSpaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
                   'LIVE CAMERA',
@@ -86,7 +86,8 @@ class _LiveCameraCardState extends State<LiveCameraCard> {
             ),
           ),
           // Video or placeholder
-          Expanded(
+          SizedBox(
+            height: 220,
             child: _hasError
                 ? const Center(
                     child: Text(
@@ -117,7 +118,7 @@ class _LiveCameraCardState extends State<LiveCameraCard> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: MainAxisSpaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'SIMULATED THERMAL VIEW',

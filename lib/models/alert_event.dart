@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:sentinel_x/core/theme/app_theme.dart';
 
 enum AlertSeverity { info, warning, danger }

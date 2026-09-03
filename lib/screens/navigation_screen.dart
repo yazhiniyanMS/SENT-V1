@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:sentinel_x/app.dart';
+import 'package:sentinel_x/core/theme/app_theme.dart';
 import 'package:sentinel_x/screens/dashboard_screen.dart';
 import 'package:sentinel_x/screens/sensors_screen.dart';
 import 'package:sentinel_x/screens/alerts_screen.dart';
