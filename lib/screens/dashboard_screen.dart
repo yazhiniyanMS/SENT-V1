@@ -9,7 +9,7 @@ import 'package:sentinel_x/widgets/robot_status_card.dart';
 import 'package:sentinel_x/widgets/emergency_alert_bar.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -155,8 +155,8 @@ class DashboardScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
                 color: appState.demoMode
-                    ? AppTheme.warningColor.withOpacity(0.2)
-                    : AppTheme.safeColor.withOpacity(0.2),
+                    ? AppTheme.warningColor.withValues(alpha: 0.2)
+                    : AppTheme.safeColor.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: appState.demoMode
@@ -180,7 +180,7 @@ class DashboardScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: AppTheme.dangerColor.withOpacity(0.2),
+                color: AppTheme.dangerColor.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: AppTheme.dangerColor,

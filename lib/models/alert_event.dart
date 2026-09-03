@@ -31,8 +31,6 @@ class AlertEvent {
         return 'WARNING';
       case AlertSeverity.danger:
         return 'DANGER';
-      default:
-        return 'UNKNOWN';
     }
   }
 
@@ -45,8 +43,6 @@ class AlertEvent {
         return AppTheme.warningColor;
       case AlertSeverity.danger:
         return AppTheme.dangerColor;
-      default:
-        return AppTheme.infoColor;
     }
   }
 

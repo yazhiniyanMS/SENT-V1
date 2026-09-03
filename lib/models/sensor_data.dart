@@ -31,8 +31,6 @@ class SensorData {
         return 'WARNING';
       case GasStatus.danger:
         return 'DANGER';
-      default:
-        return 'UNKNOWN';
     }
   }
 
@@ -45,8 +43,6 @@ class SensorData {
         return AppTheme.warningColor;
       case GasStatus.danger:
         return AppTheme.dangerColor;
-      default:
-        return AppTheme.infoColor;
     }
   }
 

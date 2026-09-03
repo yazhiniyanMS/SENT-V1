@@ -26,7 +26,7 @@ class AppTheme {
     brightness: Brightness.dark,
     scaffoldBackgroundColor: backgroundColor,
     primaryColor: accentColor,
-    colorScheme: ColorScheme.dark(
+    colorScheme: const ColorScheme.dark(
       primary: accentColor,
       secondary: infoColor,
       surface: cardColor,
@@ -42,7 +42,7 @@ class AppTheme {
       elevation: 2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        side: BorderSide(
+        side: const BorderSide(
           color: borderColor,
           width: 1,
         ),

@@ -4,7 +4,7 @@ import 'package:sentinel_x/app.dart';
 import 'package:sentinel_x/core/theme/app_theme.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +122,7 @@ class SettingsScreen extends StatelessWidget {
         color: Colors.black54,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -139,7 +139,7 @@ class SettingsScreen extends StatelessWidget {
         trailing: Switch(
           value: value,
           onChanged: onChanged,
-          activeColor: AppTheme.accentColor,
+          activeThumbColor: AppTheme.accentColor,
         ),
       ),
     );
@@ -153,7 +153,7 @@ class SettingsScreen extends StatelessWidget {
         color: Colors.black54,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -169,7 +169,7 @@ class SettingsScreen extends StatelessWidget {
         ),
         subtitle: Text(
           subtitle,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             color: Colors.white60,
           ),

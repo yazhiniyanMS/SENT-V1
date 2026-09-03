@@ -3,12 +3,12 @@ import 'package:sentinel_x/core/theme/app_theme.dart';
 
 class GpsCard extends StatelessWidget {
   const GpsCard({
-    Key? key,
+    super.key,
     required this.latitude,
     required this.longitude,
     required this.status,
     this.isDemo = false,
-  }) : super(key: key);
+  });
 
   final double latitude;
   final double longitude;

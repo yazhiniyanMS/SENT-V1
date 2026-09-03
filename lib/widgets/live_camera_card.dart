@@ -5,7 +5,7 @@ import 'package:sentinel_x/app.dart';
 import 'package:sentinel_x/widgets/thermal_view.dart';
 
 class LiveCameraCard extends StatefulWidget {
-  const LiveCameraCard({Key? key}) : super(key: key);
+  const LiveCameraCard({super.key});
 
   @override
   State<LiveCameraCard> createState() => _LiveCameraCardState();
@@ -80,7 +80,7 @@ class _LiveCameraCardState extends State<LiveCameraCard> {
                     Provider.of<AppState>(context, listen: false)
                         .setThermalSimulationEnabled(value);
                   },
-                  activeColor: Colors.orange,
+                  activeThumbColor: Colors.orange,
                 ),
               ],
             ),

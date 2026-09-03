@@ -3,14 +3,14 @@ import 'package:sentinel_x/core/theme/app_theme.dart';
 
 class SensorCard extends StatelessWidget {
   const SensorCard({
-    Key? key,
+    super.key,
     required this.label,
     required this.value,
     this.unit = '',
     this.status = 'Normal',
     this.isDemo = false,
     this.statusColor,
-  }) : super(key: key);
+  });
 
   final String label;
   final String value;

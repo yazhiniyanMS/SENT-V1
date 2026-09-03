@@ -6,7 +6,7 @@ import 'package:sentinel_x/widgets/sensor_card.dart';
 import 'package:sentinel_x/widgets/gps_card.dart';
 
 class SensorsScreen extends StatelessWidget {
-  const SensorsScreen({Key? key}) : super(key: key);
+  const SensorsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -29,8 +29,6 @@ class GpsData {
         return 'SEARCHING';
       case GpsStatus.lost:
         return 'LOST';
-      default:
-        return 'UNKNOWN';
     }
   }
 
@@ -43,8 +41,6 @@ class GpsData {
         return AppTheme.warningColor;
       case GpsStatus.lost:
         return AppTheme.dangerColor;
-      default:
-        return AppTheme.infoColor;
     }
   }
 

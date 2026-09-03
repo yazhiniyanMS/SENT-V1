@@ -10,9 +10,9 @@ import 'package:video_player/video_player.dart';
 /// to approximate a thermal-camera look for demo purposes.
 class ThermalView extends StatefulWidget {
   const ThermalView({
-    Key? key,
+    super.key,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final VideoPlayerController controller;
 
