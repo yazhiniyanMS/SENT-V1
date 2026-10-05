@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:sentinel_x/core/theme/app_theme.dart';
 
 enum GasStatus { safe, warning, danger }
@@ -30,8 +31,6 @@ class SensorData {
         return 'WARNING';
       case GasStatus.danger:
         return 'DANGER';
-      default:
-        return 'UNKNOWN';
     }
   }
 
@@ -44,8 +43,6 @@ class SensorData {
         return AppTheme.warningColor;
       case GasStatus.danger:
         return AppTheme.dangerColor;
-      default:
-        return AppTheme.infoColor;
     }
   }
 

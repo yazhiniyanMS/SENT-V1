@@ -5,7 +5,7 @@ import 'package:sentinel_x/app.dart';
 import 'package:sentinel_x/widgets/thermal_view.dart';
 
 class LiveCameraCard extends StatefulWidget {
-  const LiveCameraCard({Key? key}) : super(key: key);
+  const LiveCameraCard({super.key});
 
   @override
   State<LiveCameraCard> createState() => _LiveCameraCardState();
@@ -65,7 +65,7 @@ class _LiveCameraCardState extends State<LiveCameraCard> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: MainAxisSpaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
                   'LIVE CAMERA',
@@ -80,13 +80,14 @@ class _LiveCameraCardState extends State<LiveCameraCard> {
                     Provider.of<AppState>(context, listen: false)
                         .setThermalSimulationEnabled(value);
                   },
-                  activeColor: Colors.orange,
+                  activeThumbColor: Colors.orange,
                 ),
               ],
             ),
           ),
           // Video or placeholder
-          Expanded(
+          SizedBox(
+            height: 220,
             child: _hasError
                 ? const Center(
                     child: Text(
@@ -117,7 +118,7 @@ class _LiveCameraCardState extends State<LiveCameraCard> {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: MainAxisSpaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'SIMULATED THERMAL VIEW',

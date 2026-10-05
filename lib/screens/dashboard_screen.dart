@@ -9,7 +9,7 @@ import 'package:sentinel_x/widgets/robot_status_card.dart';
 import 'package:sentinel_x/widgets/emergency_alert_bar.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class DashboardScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Header
-            _buildHeader(),
+            _buildHeader(appState),
             const SizedBox(height: 16),
             // Live Camera
             const LiveCameraCard(),
@@ -106,14 +106,20 @@ class DashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             // Emergency Alert Bar
-            const EmergencyAlertBar(),
+            EmergencyAlertBar(
+              onSosPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('SOS ALERT TRIGGERED')),
+                );
+              },
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(AppState appState) {
     return Column(
       children: [
         const Text(
@@ -134,7 +140,7 @@ class DashboardScreen extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Row(
-          mainAxisAlignment: MainAxisSpaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Menu icon (we'll use a placeholder for now)
             IconButton(
@@ -149,8 +155,8 @@ class DashboardScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
                 color: appState.demoMode
-                    ? AppTheme.warningColor.withOpacity(0.2)
-                    : AppTheme.safeColor.withOpacity(0.2),
+                    ? AppTheme.warningColor.withValues(alpha: 0.2)
+                    : AppTheme.safeColor.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: appState.demoMode
@@ -174,7 +180,7 @@ class DashboardScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: AppTheme.dangerColor.withOpacity(0.2),
+                color: AppTheme.dangerColor.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: AppTheme.dangerColor,

@@ -15,10 +15,9 @@ dependencies:
   video_player: ^2.8.2
   flutter_map: ^6.1.0
   latlong2: ^0.9.0
-  geolocator: ^10.2.0
+  geolocator: ^14.0.2
   permission_handler: ^11.3.0
   google_fonts: ^6.2.1
-  shaders: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +28,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/videos/sentinel_demo.mp4
-    - assets/shaders/thermal.frag
-    - assets/icons/
-    - assets/images/

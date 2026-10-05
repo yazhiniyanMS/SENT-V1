@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:sentinel_x/core/theme/app_theme.dart';
 
 enum AlertSeverity { info, warning, danger }
@@ -30,8 +31,6 @@ class AlertEvent {
         return 'WARNING';
       case AlertSeverity.danger:
         return 'DANGER';
-      default:
-        return 'UNKNOWN';
     }
   }
 
@@ -44,8 +43,6 @@ class AlertEvent {
         return AppTheme.warningColor;
       case AlertSeverity.danger:
         return AppTheme.dangerColor;
-      default:
-        return AppTheme.infoColor;
     }
   }
 

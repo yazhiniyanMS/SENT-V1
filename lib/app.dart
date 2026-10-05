@@ -5,14 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sentinel_x/core/theme/app_theme.dart';
 import 'package:sentinel_x/screens/navigation_screen.dart';
+import 'package:sentinel_x/services/alert_service.dart';
 
 class SentinelXApp extends StatelessWidget {
   const SentinelXApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => AppState(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppState()),
+        ChangeNotifierProvider(create: (_) => AlertService()),
+      ],
       child: MaterialApp(
         title: 'SENTINEL-X',
         debugShowCheckedModeBanner: false,
@@ -24,6 +28,8 @@ class SentinelXApp extends StatelessWidget {
 }
 
 class AppState extends ChangeNotifier {
+  Timer? _demoTimer;
+
   // Demo data fields
   double _temperature = 28.6;
   double _humidity = 64.0;
@@ -78,7 +84,7 @@ class AppState extends ChangeNotifier {
 
   void _startDemoDataUpdates() {
     // Update every 2 seconds
-    Timer.periodic(const Duration(seconds: 2), (timer) {
+    _demoTimer = Timer.periodic(const Duration(seconds: 2), (timer) {
       _temperature += (Random().nextDouble() - 0.5) * 0.5; // +/- 0.25
       _humidity += (Random().nextDouble() - 0.5) * 2; // +/- 1
       _gasLevel += (Random().nextDouble() - 0.5) * 10; // +/- 5
@@ -124,5 +130,11 @@ class AppState extends ChangeNotifier {
 
       notifyListeners();
     });
+  }
+
+  @override
+  void dispose() {
+    _demoTimer?.cancel();
+    super.dispose();
   }
 }

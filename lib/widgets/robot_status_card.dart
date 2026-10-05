@@ -3,13 +3,13 @@ import 'package:sentinel_x/core/theme/app_theme.dart';
 
 class RobotStatusCard extends StatelessWidget {
   const RobotStatusCard({
-    Key? key,
+    super.key,
     required this.battery,
     required this.signal,
     required this.speed,
     required this.mode,
     this.isDemo = false,
-  }) : super(key: key);
+  });
 
   final int battery;
   final String signal;
@@ -64,7 +64,7 @@ class RobotStatusCard extends StatelessWidget {
 
   Widget _buildStatusRow(String label, String value, Color color) {
     return Row(
-      mainAxisAlignment: MainAxisSpaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           label,

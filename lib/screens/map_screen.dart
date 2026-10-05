@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sentinel_x/app.dart';
 import 'package:sentinel_x/core/theme/app_theme.dart';
-import 'package:sentinel_x/models/gps_data.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapScreen extends StatelessWidget {
-  const MapScreen({Key? key}) : super(key: key);
+  const MapScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +31,20 @@ class MapScreen extends StatelessWidget {
                   color: Colors.black54,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     width: 1,
                   ),
                 ),
                 child: FlutterMap(
                   options: MapOptions(
-                    center: LatLng(appState.latitude, appState.longitude),
-                    zoom: 15,
-                    interactiveFlags: appState.demoMode
-                        ? InteractiveFlag.all
-                        : InteractiveFlag.none,
+                    initialCenter:
+                        LatLng(appState.latitude, appState.longitude),
+                    initialZoom: 15,
+                    interactionOptions: InteractionOptions(
+                      flags: appState.demoMode
+                          ? InteractiveFlag.all
+                          : InteractiveFlag.none,
+                    ),
                   ),
                   children: [
                     TileLayer(
@@ -55,7 +57,7 @@ class MapScreen extends StatelessWidget {
                           width: 80.0,
                           height: 80.0,
                           point: LatLng(appState.latitude, appState.longitude),
-                          builder: (ctx) => const Icon(
+                          child: const Icon(
                             Icons.location_on,
                             color: AppTheme.infoColor,
                             size: 40,

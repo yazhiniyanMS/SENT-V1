@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sentinel_x/app.dart';
-import 'package:sentinel_x/core/theme/app_theme.dart';
 import 'package:sentinel_x/models/alert_event.dart';
 import 'package:sentinel_x/services/alert_service.dart';
 
 class AlertsScreen extends StatelessWidget {
-  const AlertsScreen({Key? key}) : super(key: key);
+  const AlertsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +63,7 @@ class AlertsScreen extends StatelessWidget {
         color: Colors.black54,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -151,8 +149,6 @@ class AlertsScreen extends StatelessWidget {
         return Icons.warning_amber_outlined;
       case AlertSeverity.danger:
         return Icons.error_outline;
-      default:
-        return Icons.notifications_outlined;
     }
   }
 }

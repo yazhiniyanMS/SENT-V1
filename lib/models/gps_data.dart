@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:sentinel_x/core/theme/app_theme.dart';
 
 enum GpsStatus { acquired, searching, lost }
@@ -28,8 +29,6 @@ class GpsData {
         return 'SEARCHING';
       case GpsStatus.lost:
         return 'LOST';
-      default:
-        return 'UNKNOWN';
     }
   }
 
@@ -42,8 +41,6 @@ class GpsData {
         return AppTheme.warningColor;
       case GpsStatus.lost:
         return AppTheme.dangerColor;
-      default:
-        return AppTheme.infoColor;
     }
   }
 
